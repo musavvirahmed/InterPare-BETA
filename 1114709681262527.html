@@ -1,0 +1,135 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8"/>
+  <title>UI Diff - [iOS] Amount of children and highchair refinement</title>
+  <style>
+    body {
+      font-family: "Helvetica Neue", Helvetica, sans-serif;
+      font-weight: 200;
+      width: 1920px;
+      color: #fff;
+      background-color: #1d1e1f;
+      margin: auto;
+      display: block;
+      width: 80%;
+      padding: 10px;
+      text-align: center;
+    }
+    textarea {
+      font-family: monospace;
+      font-size: inherit;
+      height: 150px;
+      width: 100%;
+    }
+    pre {
+      white-space: pre-wrap;
+    }
+    label {
+      display: block;
+    }
+  </style>
+</head>
+<body>
+  <div id="root"></div>
+  <script src="//fb.me/react-with-addons-0.14.7.js"></script>
+  <script src="//fb.me/react-dom-0.14.7.js"></script>
+  <script src="//npmcdn.com/babel-transform-in-browser@6.4.6/dist/btib.min.js"></script>
+  <script src="dist/react-image-diff.js"></script>
+  <script type="text/es2015">
+    var imageSets = {
+      'listview-1400-vm1': {
+        before: './public/img/listview-1400@2x.png',
+        after: './public/img/listview-1400@2xvm1.png',
+        height: 1024,
+        width: 1400
+      },
+      'listview-1400-vm2': {
+        before: './public/img/listview-1400@2x.png',
+        after: './public/img/List view - 1400@2x vm2.png',
+        height: 1024,
+        width: 1400
+      },
+      'a-1reservationlist-today-vm1': {
+        before: './public/img/A-1 Reservation List - Today@2x.png',
+        after: './public/img/A-1 Reservation List - Today@2x vm1.png',
+        height: 812,
+        width: 375
+      },
+      'a-1reservationlist-today-vm2': {
+        before: './public/img/A-1 Reservation List - Today@2x.png',
+        after: './public/img/A-1 Reservation List - Today@2x vm2.png',
+        height: 812,
+        width: 375
+      }
+    };
+
+    var App = React.createClass({
+      getInitialState: function() {
+        return {
+          images: 'listview-1400-vm1',
+          type: 'swipe',
+          value: .5
+        };
+      },
+
+      handleImageSelect: function(e) {
+        this.setState({images: e.target.value});
+      },
+
+      handleInputChange: function(e) {
+        this.setState({
+          value: parseFloat(e.target.value)
+        });
+      },
+
+      handleRadioChange: function(e) {
+        this.setState({type: e.target.value});
+      },
+
+      render: function () {
+        var images = imageSets[this.state.images];
+
+        return (
+          <div>
+            <p>[iOS] Amount of children and highchair refinement - <a target="_blank" rel="noopener noreferrer" href="https://app.asana.com/0/453383623042705/1114709681262527/f">Asana Board</a></p>
+            <select onChange={this.handleImageSelect}>
+              <option value='listview-1400-vm1'>List view - 1400 - VM1</option>
+              <option value='listview-1400-vm2'>List view - 1400 - VM2</option>
+              <option value='a-1reservationlist-today-vm1'>A-1 Reservation List - Today - VM1</option>
+              <option value='a-1reservationlist-today-vm2'>A-1 Reservation List - Today - VM2</option>
+            </select>
+            <div>
+              <ImageDiff
+                {...images}
+                type={this.state.type}
+                value={this.state.value}
+              />
+            </div>
+            <input
+              type='range'
+              defaultValue={this.state.value}
+              min={0}
+              max={1}
+              step={.01}
+              onChange={this.handleInputChange}
+              disabled={this.state.type === 'difference' ? true : false}
+            />
+            <br/>
+            <label>
+              <input name='type' type='radio' value='swipe' onChange={this.handleRadioChange} defaultChecked />
+              swipe
+            </label>
+            <label>
+              <input name='type' type='radio' value='difference' onChange={this.handleRadioChange} />
+              difference
+            </label>
+          </div>
+        );
+      }
+    });
+
+    ReactDOM.render(<App/>, document.getElementById('root'));
+  </script>
+</body>
+</html>
