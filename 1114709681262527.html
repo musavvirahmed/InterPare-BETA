@@ -38,27 +38,27 @@
   <script src="dist/react-image-diff.js"></script>
   <script type="text/es2015">
     var imageSets = {
-      'listview-1400-vm1': {
+      'listview-1400-vm3': {
         before: './public/img/listview-1400@2x.png',
-        after: './public/img/listview-1400@2xvm1.png',
+        after: './public/img/List view - 1400@2x vm3.png',
         height: 1024,
         width: 1400
       },
-      'listview-1400-vm2': {
+      'listview-1400-vm4': {
         before: './public/img/listview-1400@2x.png',
-        after: './public/img/List view - 1400@2x vm2.png',
+        after: './public/img/List view - 1400@2x vm4.png',
         height: 1024,
         width: 1400
       },
-      'a-1reservationlist-today-vm1': {
+      'a-1reservationlist-today-vm3': {
         before: './public/img/A-1 Reservation List - Today@2x.png',
-        after: './public/img/A-1 Reservation List - Today@2x vm1.png',
+        after: './public/img/A-1 Reservation List - Today@2x vm3.png',
         height: 812,
         width: 375
       },
-      'a-1reservationlist-today-vm2': {
+      'a-1reservationlist-today-vm4': {
         before: './public/img/A-1 Reservation List - Today@2x.png',
-        after: './public/img/A-1 Reservation List - Today@2x vm2.png',
+        after: './public/img/A-1 Reservation List - Today@2x vm4.png',
         height: 812,
         width: 375
       }
@@ -67,9 +67,9 @@
     var App = React.createClass({
       getInitialState: function() {
         return {
-          images: 'listview-1400-vm1',
+          images: 'listview-1400-vm3',
           type: 'swipe',
-          value: .5
+          value: .67
         };
       },
 
@@ -94,10 +94,10 @@
           <div>
             <p>[iOS] Amount of children and highchair refinement - <a target="_blank" rel="noopener noreferrer" href="https://app.asana.com/0/453383623042705/1114709681262527/f">Asana Board</a></p>
             <select onChange={this.handleImageSelect}>
-              <option value='listview-1400-vm1'>List view - 1400 - VM1</option>
-              <option value='listview-1400-vm2'>List view - 1400 - VM2</option>
-              <option value='a-1reservationlist-today-vm1'>A-1 Reservation List - Today - VM1</option>
-              <option value='a-1reservationlist-today-vm2'>A-1 Reservation List - Today - VM2</option>
+              <option value='listview-1400-vm3'>List view - 1400 - VM3</option>
+              <option value='listview-1400-vm4'>List view - 1400 - VM4</option>
+              <option value='a-1reservationlist-today-vm3'>A-1 Reservation List - Today - VM3</option>
+              <option value='a-1reservationlist-today-vm4'>A-1 Reservation List - Today - VM4</option>
             </select>
             <div>
               <ImageDiff
