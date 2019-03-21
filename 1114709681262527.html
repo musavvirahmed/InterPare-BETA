@@ -62,6 +62,12 @@
         height: 1024,
         width: 1400
       },
+      'listview-1400-vm5': {
+        before: './public/img/listview-1400@2x.png',
+        after: './public/img/List view - 1400@2x VM5.png',
+        height: 1024,
+        width: 1400
+      },
       'a-1reservationlist-today-vm1': {
         before: './public/img/A-1 Reservation List - Today@2x.png',
         after: './public/img/A-1 Reservation List - Today@2x vm1.png',
@@ -91,7 +97,7 @@
     var App = React.createClass({
       getInitialState: function() {
         return {
-          images: 'listview-1400-vm3',
+          images: 'listview-1400-vm5',
           type: 'swipe',
           value: .45
         };
@@ -118,13 +124,10 @@
           <div>
             <p>[iOS] Amount of children and highchair refinement - <a target="_blank" rel="noopener noreferrer" href="https://app.asana.com/0/453383623042705/1114709681262527/f">Asana Board</a></p>
             <select onChange={this.handleImageSelect}>
+              <option value='listview-1400-vm5'>List view - 1400 - VM5</option>
               <option value='listview-1400-vm1'>List view - 1400 - VM1</option>
-              <option value='listview-1400-vm2'>List view - 1400 - VM2</option>
-              <option value='listview-1400-vm3'>List view - 1400 - VM3</option>
               <option value='listview-1400-vm4'>List view - 1400 - VM4</option>
               <option value='a-1reservationlist-today-vm1'>A-1 Reservation List - Today - VM1</option>
-              <option value='a-1reservationlist-today-vm2'>A-1 Reservation List - Today - VM2</option>
-              <option value='a-1reservationlist-today-vm3'>A-1 Reservation List - Today - VM3</option>
               <option value='a-1reservationlist-today-vm4'>A-1 Reservation List - Today - VM4</option>
             </select>
             <div>
