@@ -1,7 +1,10 @@
-# UI-Diff-Tool
+# InterPare
 
-Compares images, forked from cezary's [react-image-diff](https://github.com/cezary/react-image-diff).
-Currently, primarily being used R+W inhouse for comparing UI tweaks
+InterPare - Compare Interface Design (BETA).
+
+ is a tool I use to-
+• show stakeholders the difference between two UI design screenshots.
+• do design QA testing after developer iterations.
 
 ## Demo
 
