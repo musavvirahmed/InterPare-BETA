@@ -2,7 +2,7 @@
 <html>
 <head>
   <meta charset="utf-8"/>
-  <title>UI Diff - Asana Task Name Can Go Here</title>
+  <title>Interpare - Compare Interface Design (BETA)<</title>
   <style>
     body {
       font-family: "Helvetica Neue", Helvetica, sans-serif;
@@ -39,28 +39,22 @@
   <script type="text/es2015">
     var imageSets = {
       'a': {
-        before: './#',
-        after: './#',
-        height: 100,
-        width: 100
+        before: './public/img/subscribers--showAll-1010.png',
+        after: './public/img/toolbar--globalSearch-1011.png',
+        height: 768,
+        width: 1024
       },
       'b': {
-        before: './#',
-        after: './#',
-        height: 100,
-        width: 100
+        before: './public/img/subscribers--showAll-1010.png',
+        after: './public/img/toolbar--myAccount-1012.png',
+        height: 768,
+        width: 1024
       },
       'c': {
-        before: './#',
-        after: './#',
-        height: 100,
-        width: 100
-      },
-      'd': {
-        before: './#',
-        after: './#',
-        height: 100,
-        width: 100
+        before: './public/img/subscribers--new-step2-1030.png',
+        after: './public/img/subscribers--new-step2.5-1033.png',
+        height: 768,
+        width: 1024
       }
     };
 
@@ -92,12 +86,11 @@
 
         return (
           <div>
-            <p>Asana Task Name Can Go Here - <a target="_blank" rel="noopener noreferrer" href="#">Asana Link</a></p>
+            <p>Trello / Asana Link - <a target="_blank" rel="noopener noreferrer" href="#">Goes Here</a></p>
             <select onChange={this.handleImageSelect}>
-              <option value='a'>Image - A</option>
-              <option value='b'>Image - B</option>
-              <option value='c'>Image - C</option>
-              <option value='d'>Image - D</option>
+              <option value='a'>Subscriber Search</option>
+              <option value='b'>Account Menu</option>
+              <option value='c'>Payment Status</option>
             </select>
             <div>
               <ImageDiff
